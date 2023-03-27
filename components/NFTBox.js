@@ -66,12 +66,15 @@ export default function NFTBox({
                 "ipfs://",
                 "https://ipfs.io/ipfs/"
             )
-            const tokenURIResponse = await (await fetch(requestURL)).json()
+            const jsonURL = 'https://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4.ipfs.dweb.link/?filename=0-PUG.json'
+            const tokenURIResponse = await (await fetch(jsonURL)).json()
             const imageURI = tokenURIResponse.image
-            const imageURIURL = imageURI.replace(
-                "ipfs://",
-                "https://ipfs.io/ipfs/"
-            )
+            const imageURIURL = 'https://bafybeicdlctvdhgvhnu5xqjm6tvjzaw3oyllq77deguvllb52hzu3ur76m.ipfs.dweb.link/?filename=pug.png'
+            
+            // imageURI.replace(
+            //     "ipfs://",
+            //     "https://ipfs.io/ipfs/"
+            // )
             setImageURI(imageURIURL)
             setTokenName(tokenURIResponse.name)
             setTokenDescription(tokenURIResponse.description)
