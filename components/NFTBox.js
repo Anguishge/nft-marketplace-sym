@@ -78,6 +78,7 @@ export default function NFTBox({
         }
         //get tokenURI
         //using the image tag from the tokenURI, get the image
+        //add comment
     }
 
     useEffect(() => {
