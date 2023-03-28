@@ -62,20 +62,18 @@ export default function NFTBox({
         console.log(nftAbi)
         console.log(`The TokenURI is ${tokenURI}`)
         if (tokenURI) {
-            const requestURL = tokenURI.replace(
-                "ipfs://",
-                "https://ipfs.io/ipfs/"
-            )
-            const jsonURL = 'https://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4.ipfs.dweb.link/?filename=0-PUG.json'
-            const tokenURIResponse = await (await fetch(jsonURL)).json()
+            let requestURL = tokenURI.replace("ipfs://","https://").replace("/\?", ".ipfs.dweb.link/\?")
+            console.log("request url:", requestURL)
+            const tokenURIResponse = await (await fetch(requestURL)).json()
             const imageURI = tokenURIResponse.image
-            const imageURIURL = 'https://bafybeicdlctvdhgvhnu5xqjm6tvjzaw3oyllq77deguvllb52hzu3ur76m.ipfs.dweb.link/?filename=pug.png'
-            
-            // imageURI.replace(
+            // const imageURIURL = 'https://bafybeicdlctvdhgvhnu5xqjm6tvjzaw3oyllq77deguvllb52hzu3ur76m.ipfs.dweb.link/?filename=pug.png'
+            // 'https://ipfs.io/ipfs/QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png'            
+            // imageURIURL.replace(
             //     "ipfs://",
             //     "https://ipfs.io/ipfs/"
             // )
-            setImageURI(imageURIURL)
+            console.log("image url:", imageURI)
+            setImageURI(imageURI)
             setTokenName(tokenURIResponse.name)
             setTokenDescription(tokenURIResponse.description)
         }
