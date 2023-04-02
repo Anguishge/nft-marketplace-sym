@@ -34,8 +34,6 @@ const columns = [
 
 
 
-
-
 export default function Home() {
     const { isWeb3Enabled, chainId } = useMoralis()
     const chainString = chainId ? parseInt(chainId).toString() : "5"
@@ -105,9 +103,12 @@ export default function Home() {
                     <div>Web3 Currently Not Enabled </div>
                 )}
             </div>
+            
             <h1 className="py-4 px-4 font-bold text-2xl">Past transactions</h1>
             <div className="flex flex-wrap">
-            
+            {!PastNfts ? (
+                        <div>Loading...</div>
+            ):
                     <Table
                     aria-label="Example table with dynamic content"
                     css={{
@@ -126,9 +127,10 @@ export default function Home() {
                             {(columnKey) => <Table.Cell>{item[columnKey]}</Table.Cell>}
                         </Table.Row>
                         )}
+
                     </Table.Body>
                     </Table>
-                ;
+};
             
             </div>
 
@@ -136,3 +138,4 @@ export default function Home() {
         </div>
     )
 }
+
