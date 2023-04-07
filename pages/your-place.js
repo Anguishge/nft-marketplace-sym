@@ -12,15 +12,14 @@ const inter = Inter({ subsets: ["latin"] })
 
 
 export default function Home() {
-    const { isWeb3Enabled, chainId,account} = useMoralis()
+    const { isWeb3Enabled, chainId, account} = useMoralis()
     const chainString = chainId ? parseInt(chainId).toString() : "31337"
-    
     const marketplaceAddress = chainId
         ? networkMapping[chainString].NftMarketplace[0]
         : null
     var GET_ITEMS = gql`
         {
-            activeItems( where: {seller: "$account"}
+            activeItems( where: {seller: "${account}"}
             ) {
                 id
                 buyer
