@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.10",
-    "@nextui-org/react": "*",
+    "@nextui-org/react": "^1.0.0-beta.12",
+    "@thirdweb-dev/react": "^3.11.7",
+    "@thirdweb-dev/sdk": "^3.10.10",
     "@walletconnect/web3-provider": "^1.8.0",
     "@web3auth/web3auth": "^2.1.3",
+    "ethers": "5",
     "graphql": "^16.6.0",
     "magic-sdk": "^14.0.0",
     "moralis": "^2.15.0",

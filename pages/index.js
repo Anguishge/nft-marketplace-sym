@@ -6,7 +6,6 @@ import networkMapping from "../constants/networkMapping.json"
 import { useMoralis } from "react-moralis"
 import { useQuery, gql } from "@apollo/client"
 import subq from "../constants/subgraphQueries"
-// import Table from '../components/Table';
 import {Table} from '@nextui-org/react'
 const inter = Inter({ subsets: ["latin"] })
 
@@ -72,8 +71,8 @@ export default function Home() {
                     <div>Web3 Currently Not Enabled </div>
                 )}
             </div>
-            <h1 className="py-4 px-4 font-bold text-2xl">Past transactions</h1>
-            <div className="flex flex-wrap">
+            {/* <h1 className="py-4 px-4 font-bold text-2xl">Past transactions</h1> */}
+            {/* <div className="flex flex-wrap">
                 {isWeb3Enabled ? (
                     loading || !PastNfts ? (
                         <div>Loading...</div>
@@ -102,7 +101,7 @@ export default function Home() {
                 ) : (
                     <div>Web3 Currently Not Enabled </div>
                 )}
-            </div>
+            </div> */}
             
             <h1 className="py-4 px-4 font-bold text-2xl">Past transactions</h1>
             <div className="flex flex-wrap">

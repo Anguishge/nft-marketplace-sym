@@ -60,11 +60,21 @@ export default function NFTBox({
     async function updateUI() {
         const tokenURI = await getTokenURI()
         console.log(nftAbi)
-        console.log(`The TokenURI is ${tokenURI}`)
+        // console.log(`The TokenURI is ${tokenURI}`)
         if (tokenURI) {
-            let requestURL = tokenURI.replace("ipfs://","https://").replace("/\?", ".ipfs.dweb.link/\?")
+
+            var requestURL = tokenURI.replace("ipfs://","https://").replace("/\?", ".ipfs.dweb.link/\?")
             console.log("request url:", requestURL)
-            const tokenURIResponse = await (await fetch(requestURL)).json()
+            try{
+            var tokenURIResponse = await (await fetch(requestURL)).json();
+            // try{
+            //     var tokenURIResponse = await (await fetch(tokenURI)).json();
+            }
+            catch{
+                
+                var tokenURIResponse = await (await fetch('https://bafybeieuospxrvksuas7f4qnhnz25lqmkxwaebkhqtc6vvmjwczfoeykrq.ipfs.dweb.link/')).json();
+            }
+            
             const imageURI = tokenURIResponse.image
             // const imageURIURL = 'https://bafybeicdlctvdhgvhnu5xqjm6tvjzaw3oyllq77deguvllb52hzu3ur76m.ipfs.dweb.link/?filename=pug.png'
             // 'https://ipfs.io/ipfs/QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png'            
