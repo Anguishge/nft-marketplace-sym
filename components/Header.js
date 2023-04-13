@@ -9,9 +9,9 @@ export default function Header() {
                 <Link href="/" className="mr-4 p-6">
                     Home
                 </Link>
-                <Link href="/sell-nft" className="mr-4 p-6">
+                {/* <Link href="/sell-nft" className="mr-4 p-6">
                     Sell NFT
-                </Link>
+                </Link> */}
                 <Link href="/your-place" className="mr-4 p-6">
                     Your place
                 </Link>
